@@ -1,0 +1,30 @@
+@use './abstracts/colors.module.scss' as * ;
+
+html,body {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: all .3s ease;
+}
+
+[data-theme='dark'] {
+  body {
+    color: $Light_Color;
+    background-color: $Dark_Color;
+  }
+}
+[data-theme='light'] {
+  body {
+    color: $Dark_Color;
+    background-color: $Light_Color;
+  }
+}
+
+* {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

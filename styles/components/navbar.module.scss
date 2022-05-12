@@ -1,0 +1,38 @@
+@use '../abstracts/colors.module.scss' as *;
+@use '../abstracts/fonts.modules.scss' as *;
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    width: 100%;
+    background-color: $Secondary_Color;
+}
+.title{
+    color: $Light_Color;
+    font-size: $Title_Font;
+}
+.toggle__button{
+    background-color: transparent;
+    border: none;
+}
+.icon_light{
+    color: white;
+    width: 50px;
+    cursor: pointer;
+    transition: all .3s ease;
+    transform: rotate(0);
+    &:hover{
+        color: $Tertiary_Color;
+    }
+}
+.icon_dark{
+    color: white;
+    width: 50px;
+    cursor: pointer;
+    transition: all .3s ease;
+    transform: rotate(180deg);
+    &:hover{
+        color: $Tertiary_Color;
+    }
+}
