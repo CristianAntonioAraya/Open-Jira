@@ -1,23 +1,32 @@
 @use '../abstracts/colors.module.scss' as *;
 @use '../abstracts/fonts.modules.scss' as *;
 .container{
+    position: fixed;
+    top: 0;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
     width: 100%;
-    background-color: $Secondary_Color;
+    background-color: $Light_Color;
 }
 .title{
-    color: $Light_Color;
+    color: $Primary_Color;
     font-size: $Title_Font;
+    cursor: pointer;
+    &:hover{
+        color: $Tertiary_Color;
+    }
 }
 .toggle__button{
     background-color: transparent;
     border: none;
 }
+
+
 .icon_light{
-    color: white;
+    color: $Primary_Color;
     width: 50px;
     cursor: pointer;
     transition: all .3s ease;
@@ -26,6 +35,8 @@
         color: $Tertiary_Color;
     }
 }
+
+
 .icon_dark{
     color: white;
     width: 50px;
@@ -34,5 +45,20 @@
     transform: rotate(180deg);
     &:hover{
         color: $Tertiary_Color;
+    }
+}
+
+[data-theme='dark'] {
+    .container{
+        background-color: $Secondary_Color;
+    }
+    .arrow {
+        color: $Light_Color;
+    }
+    .title{
+        color: $Light_Color;
+        &:hover{
+            color: $Tertiary_Color;
+        }
     }
 }

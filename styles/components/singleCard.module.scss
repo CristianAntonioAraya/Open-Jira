@@ -1,0 +1,15 @@
+@use '../abstracts/colors.module.scss' as *;
+
+.container{
+    background-color: #9675fa7a;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+
+[data-theme='dark'] {
+    .container{
+        background-color: #9675fa94;
+    }
+}

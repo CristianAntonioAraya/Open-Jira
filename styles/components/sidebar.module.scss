@@ -1,0 +1,118 @@
+@import '../abstracts/colors.module.scss';
+
+.container{
+    position: absolute;
+    position: fixed;
+    background-color: $Light_Color;
+    height: 100vw;
+    top: 0;
+    z-index: 3;
+    padding-top: 6rem;
+    transition: width .5s ease;
+}
+
+[data-theme='dark'] {
+    .container{
+        background-color: $Secondary_Color;
+    }
+    .arrow {
+        color: $Light_Color;
+        &:hover{
+            color: $Tertiary_Color;
+        }
+    }
+}
+
+.container_open{
+    width: 20rem;
+}
+.container_close{
+    width: 4rem;
+}
+.arrow{
+    position: absolute;
+    color: $Primary_Color;
+    cursor: pointer;
+    transition: transform .5s ease;
+    width: 2rem;
+    &:hover{
+        color: $Tertiary_Color;
+    }
+}
+.arrow_close{
+    right: 15px;
+}
+.arrow_open{
+    right: 1rem;
+    transform: rotate(-180deg);
+}
+
+.content{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5rem;
+    align-items: center;
+    transition: all .3s ease;
+}
+.icon_container_add{
+    position: absolute;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    color: $Tertiary_Color;
+    &:hover{
+        color: $Light_Color;
+    }
+}
+.addNew{
+    position: relative;
+    align-items: center;
+    min-width: 40px;
+    width: 40px;
+    transition: all .3s ease;
+}
+.text{
+    margin-top: 1rem;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+.show_text{
+    display: block;
+}
+.hidde_text{
+    position: absolute;
+    color: transparent;
+    right: 50rem;
+}
+.icon_container_theme{
+    top: 18rem;
+    position: absolute;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    color: $Tertiary_Color;
+    &:hover{
+        color: $Light_Color;
+    }
+}
+.theme{
+    
+    position: relative;
+    align-items: center;
+    min-width: 40px;
+    width: 40px;
+    transition: all .3s ease;
+}
+[data-theme='dark'] {
+    .icon_container{
+        color: $Light_Color;
+        &:hover{
+            color: $Tertiary_Color;
+        }
+    }
+}

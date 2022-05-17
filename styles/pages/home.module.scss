@@ -1,0 +1,7 @@
+.container{
+    width: calc(100vw - 6rem);
+    height: calc(100vh - 7rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+}

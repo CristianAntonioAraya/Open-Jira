@@ -1,0 +1,29 @@
+@use '../abstracts/colors.module.scss' as *;
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #9675fa30;
+    border-radius: 20px;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.title{ 
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.cards{
+    width: 100%;
+    height: calc(100% - 3rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+[data-theme='dark'] {
+    .container{
+        background-color: $Grey_Color;
+        
+    }
+}

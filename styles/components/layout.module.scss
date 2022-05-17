@@ -1,0 +1,17 @@
+@use '../abstracts/colors.module.scss' as *;
+.container{
+    padding-top: 6rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.opacity::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $Dark_Color;
+    z-index: 2;
+    opacity: .6;
+}
