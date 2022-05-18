@@ -51,12 +51,23 @@ type Props = {
     children: ReactNode
 }
 
-export const EntriesProvider: FC<Props> = ( { children }) => {
 
+export const EntriesProvider: FC<Props> = ( { children }) => {
+    
     const [state, dispatch] = useReducer(entriesReducer, ENTRIES_INITIAL_STATE)
 
+    const addNewEntry = ( description: string ) => {
+        const newEntry:Entry = {
+            _id: uuidv4(),
+            description,
+            createdAt: Date.now(),
+            status: "pending"
+        }
+        dispatch( { type : '[Entry] Add entry', payload: newEntry } )
+    }
+
     return (
-        <EntriesContext.Provider value={ { ...state } }>
+        <EntriesContext.Provider value={ { ...state, addNewEntry } }>
             { children }
         </EntriesContext.Provider>
     )

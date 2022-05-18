@@ -14,46 +14,17 @@
 .title{
     color: $Primary_Color;
     font-size: $Title_Font;
+    transition: color .5s ease;
     cursor: pointer;
     &:hover{
-        color: $Tertiary_Color;
-    }
-}
-.toggle__button{
-    background-color: transparent;
-    border: none;
-}
-
-
-.icon_light{
-    color: $Primary_Color;
-    width: 50px;
-    cursor: pointer;
-    transition: all .3s ease;
-    transform: rotate(0);
-    &:hover{
-        color: $Tertiary_Color;
+        color: $Secondary_Color;
     }
 }
 
-
-.icon_dark{
-    color: white;
-    width: 50px;
-    cursor: pointer;
-    transition: all .3s ease;
-    transform: rotate(180deg);
-    &:hover{
-        color: $Tertiary_Color;
-    }
-}
 
 [data-theme='dark'] {
     .container{
         background-color: $Secondary_Color;
-    }
-    .arrow {
-        color: $Light_Color;
     }
     .title{
         color: $Light_Color;

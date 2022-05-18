@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext, useEffect, useState } from 'react';
 
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -16,24 +16,40 @@ type Props = {
 
 const Layout: NextPage<Props> = ( { children, title = "OpenJira" } ) => {
 
-  const { sidemenuOpen } = useContext( UIContext )
+    const { sidemenuOpen, isAddNew } = useContext( UIContext )
 
-  return (
-    <>
-        <Head>
-            <title>{ title }</title>
-        </Head>
-        <ThemeProvider>
-            <Navbar/>
-            <SideBar/>
-            <main 
-            className={ `${sidemenuOpen ? styles.opacity : ''} ${ styles.container}` }
-            >
-                { children }
-            </main>
-        </ThemeProvider>
-    </>
-  )
+    const [toggleOpacity, setToggleOpacity] = useState(false)
+
+    useEffect(() => {
+      if( sidemenuOpen || isAddNew ){ 
+        setToggleOpacity(true)
+      }
+      if( !sidemenuOpen && !isAddNew){
+        setToggleOpacity(false)
+      }
+    }, [sidemenuOpen, isAddNew])
+    
+
+    const handleOnClick = () => {
+    
+    }
+
+
+    return (
+      <>
+          <Head>
+              <title>{ title }</title>
+          </Head>
+          <ThemeProvider>
+              <Navbar/>
+              <SideBar/>
+              <main className={ styles.container}>
+                <div className={`${ toggleOpacity ? styles.opacity : ''}`} onClick={ handleOnClick }/>
+                  { children }
+              </main>
+          </ThemeProvider>
+      </>
+    )
 }
 
 export default Layout

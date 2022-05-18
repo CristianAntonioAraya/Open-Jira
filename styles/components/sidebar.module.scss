@@ -36,7 +36,7 @@
     transition: transform .5s ease;
     width: 2rem;
     &:hover{
-        color: $Tertiary_Color;
+        color: $Secondary_Color;
     }
 }
 .arrow_close{
@@ -62,9 +62,9 @@
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    color: $Tertiary_Color;
+    color: $Primary_Color;
     &:hover{
-        color: $Light_Color;
+        color: $Secondary_Color;
     }
 }
 .addNew{
@@ -90,16 +90,17 @@
 .icon_container_theme{
     top: 18rem;
     position: absolute;
-    transition: all .5s ease;
+    transition: all 1s ease;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     align-items: center;
-    color: $Tertiary_Color;
+    color: $Primary_Color;
     &:hover{
-        color: $Light_Color;
+        color: $Secondary_Color;
     }
 }
+
 .theme{
     
     position: relative;
@@ -109,10 +110,17 @@
     transition: all .3s ease;
 }
 [data-theme='dark'] {
-    .icon_container{
-        color: $Light_Color;
+    .icon_container_add{
+        color: $Tertiary_Color;
         &:hover{
-            color: $Tertiary_Color;
+        color: $Light_Color;
+        }
+    }
+    .icon_container_theme{
+        color: $Tertiary_Color;
+        &:hover{
+        transform: rotate(0);
+        color: $Light_Color;
         }
     }
 }

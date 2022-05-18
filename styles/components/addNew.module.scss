@@ -1,0 +1,154 @@
+@use '../abstracts/colors.module.scss' as *;
+
+.container{
+    position: absolute;
+    top: 25%;
+    right: 32%;
+    width: 30rem;
+    height: 17rem;
+    z-index: 6;
+    background-color: $Light_Color;
+    border: 2px solid $Primary_Color;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.hidden{
+    display: none;
+}
+.close_icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $Primary_Color;
+    width: 30px;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover{
+        color: $Red_Color;
+        transform: scale(1.1);
+    }
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+.title{
+    font-size: 30px;
+    margin-bottom: 2rem;
+    color: $Primary_Color;
+}
+.input_container{
+    position: relative;
+    width: 100%;
+}
+.label{
+    position: absolute;
+    font-size: 15px;
+    left: 20px;
+    top: -10px;
+    background-color: $Light_Color;
+    
+}
+.red_color{
+    color: $Red_Color;
+} 
+.white_color{
+    color: $Primary_Color;
+}
+.red_border{
+    border: 1px solid $Red_Color;
+} 
+.white_border{
+    border: 1px solid $Primary_Color;
+}
+.input{
+    color: white;
+    font-size: 20px;
+    padding: 1rem;
+    height: 3rem;
+    width: 100%;
+    background-color: transparent;
+    
+    &:focus{
+        outline: none;
+    }
+}
+.error_msg{
+    color: $Red_Color;
+    align-self: flex-start;
+    margin: 1rem 0;
+}
+
+.btn_container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.btn{
+    padding: 0.5rem;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn_save{
+    display: flex;
+    border: 1px solid $Green_Color;
+    color: $Green_Color;
+    padding: 0.5rem 1.5rem;
+    &:hover{
+        background-color: $Green_Color;
+        color: $Light_Color;
+    }
+}
+.save_icon{
+    margin-right: 10px;
+    width: 25px;
+
+}
+.trash_icon{
+    margin-right: 10px;
+    width: 25px;
+}
+.btn_cancel{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid $Red_Color;
+    color: $Red_Color;
+    &:hover{
+        background-color: $Red_Color;
+        color: $Light_Color;
+    }
+}
+
+[data-theme='dark'] {
+    .container{
+        background-color: $Secondary_Color;
+        border: 2px solid $Grey_Color;
+    }
+    .title{
+        color: $Light_Color;
+    }
+    .label{
+        background-color: $Secondary_Color;
+    }
+    .white_color{
+        color: $Light_Color;
+    }
+    .white_border{
+        border: 1px solid $Light_Color;
+    }
+    .close_icon{
+        color: $Light_Color;
+        &:hover{
+            color: $Red_Color;
+        }
+    }
+    
+}

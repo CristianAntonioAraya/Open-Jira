@@ -1,10 +1,15 @@
 @use '../abstracts/colors.module.scss' as *;
 
 .container{
-    background-color: #9675fa7a;
+    background-color: #8278a1;
     padding: 1rem;
     border-radius: 20px;
     margin-bottom: 1rem;
+    cursor: move;
+    position: relative;
+    width: 100%;
+    height: max-content;
+    visibility: visible;
 }
 
 

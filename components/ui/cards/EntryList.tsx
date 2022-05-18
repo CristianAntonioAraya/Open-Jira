@@ -1,4 +1,4 @@
-import { FC, useContext, useMemo } from 'react'
+import { DragEvent, FC, useContext, useMemo } from 'react'
 import { EntriesContext } from '../../../context/entries';
 import { EntryStatus } from '../../../interfaces';
 
@@ -16,8 +16,17 @@ export const EntryList: FC<Props> = ( { title, status}) => {
 
   const entriesByStatus = useMemo(() => entries.filter( entry => entry.status == status ) , [ entries ])
   
+  const allowDrop = (event:DragEvent) => {
+    event.preventDefault();
+  }
+
+  const handleOnDrop = (event:DragEvent) => {
+    const id = event.dataTransfer.getData('id')
+    console.log(id)
+  }
+
   return (
-    <div className={ styles.container }>
+    <div className={ styles.container } onDrop={ handleOnDrop } onDragOver={ allowDrop }>
         <div className={ styles.cards }>
           <h2 className={ styles.title}> { title } </h2>
             {
