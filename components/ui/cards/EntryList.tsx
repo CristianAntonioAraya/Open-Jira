@@ -12,7 +12,7 @@ interface Props {
 
 export const EntryList: FC<Props> = ( { title, status}) => {
 
-  const { entries } = useContext( EntriesContext );
+  const { entries, updateEntry } = useContext( EntriesContext );
 
   const entriesByStatus = useMemo(() => entries.filter( entry => entry.status == status ) , [ entries ])
   
@@ -22,7 +22,9 @@ export const EntryList: FC<Props> = ( { title, status}) => {
 
   const handleOnDrop = (event:DragEvent) => {
     const id = event.dataTransfer.getData('id')
-    console.log(id)
+    const entry = entries.find( e => e._id === id )!;
+    entry.status = status
+    updateEntry( entry )
   }
 
   return (

@@ -14,7 +14,7 @@ export const EntryCard: FC<Props> = ( { entry } ) => {
   }
 
   const handleOnDragEnd = ( ) => {
-
+    
   }
 
   return (
